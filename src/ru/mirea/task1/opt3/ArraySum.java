@@ -1,5 +1,5 @@
 package ru.mirea.task1.opt3;
-import java.util.Arrays;
+//import java.util.Arrays;
 import java.util.Scanner;
 
 public class ArraySum {
