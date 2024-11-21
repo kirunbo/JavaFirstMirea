@@ -33,7 +33,9 @@ public abstract class Shape {
     @Override
     public String toString(){
         return "type of shape is: " + this.getType() + "\narea equals: " + this.getArea()
-                + "\nperimeter equals: " + this.getPerimeter() + "\n";
+                + "\nperimeter equals: " + this.getPerimeter()
+                + "\ncolor: " + color
+                + "\nfilled: " + filled + "\n";
     }
 }
 
@@ -161,8 +163,8 @@ class Square extends Rectangle{
 class Main{
     public static void main(String[] args) {
         Circle circle = new Circle(2.5);
-        Rectangle rectangle = new Rectangle(3.4, 2.1);
-        Square square = new Square(4);
+        Rectangle rectangle = new Rectangle(3.4, 2.1, "green", true);
+        Square square = new Square();
 
         System.out.println(circle);
         System.out.println();
