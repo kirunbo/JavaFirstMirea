@@ -8,11 +8,15 @@ import java.awt.event.ActionListener;
 public class Football extends JFrame{
     private int acm = 0;
     private int rm = 0;
+    private int time = 0;
+    Timer timer;
     JLabel result = new JLabel("Result: 0 X 0", JLabel.LEFT);
     JLabel scorer = new JLabel("Last scorer: N/A", JLabel.CENTER);
     JLabel winner = new JLabel("Winner: DRAW", JLabel.RIGHT);
 
     public Football(){
+
+
         this.setTitle("football");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(300,200);
@@ -46,6 +50,19 @@ public class Football extends JFrame{
         this.getContentPane().add(panel);
         this.pack();
         this.setVisible(true);
+        timer = new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                time++;
+                if(time>=5){
+                    timer.stop();
+                    ac_milan_button.setEnabled(false);
+                    real_madrid_button.setEnabled(false);
+                    JOptionPane.showMessageDialog(null, "time's up! " + winner.getText());
+                }
+            }
+        });
+        timer.start();
     }
 
     private void resultsUpdate(String lastScorer){
