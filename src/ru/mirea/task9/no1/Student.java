@@ -11,7 +11,7 @@ public class Student  implements Comparable<Student>{
 
     @Override
     public int compareTo(Student student) {
-        return this.name.compareTo(student.name);
+        return this.id.compareTo(student.id);
     }
 
     @Override
@@ -33,22 +33,25 @@ class Main {
         }
         System.out.println();
 
-        insertionSort(students);
+        InsertionSort.insertionSort(students);
+
         for (Student student : students){
             System.out.println(student);
         }
     }
+}
 
-    public static void insertionSort(Student[] students){
-        int n = students.length;
+class InsertionSort{
+    public static void insertionSort(Comparable[] list){
+        int n = list.length;
         for (int i = 1; i < n; i++) {
-            Student key = students[i];
+            Comparable key = list[i];
             int j = i - 1;
-            while (j >= 0 && students[j].id > key.id) {
-                students[j + 1] = students[j];
+            while (j >= 0 && list[j].compareTo(key) > 0) {
+                list[j + 1] = list[j];
                 j = j -1;
             }
-            students[j + 1] = key;
+            list[j + 1] = key;
         }
     }
 }
