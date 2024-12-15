@@ -15,16 +15,16 @@ public class Animation extends JPanel implements ActionListener{
         JFrame frame = new JFrame("Animation");
         Animation animationPanel = new Animation(imagePath);
         frame.add(animationPanel);
-        frame.setSize(240, 500);
+        frame.setSize(235, 500);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }
 
     BufferedImage image;
     int height = 500;
-    int width = 240;
+    int width = 235;
     int currentFrame = 0;
-    Timer timer = new Timer(100, this);
+    Timer timer = new Timer(150, this);
 
     Animation(String imagePath) throws IOException {
         image = ImageIO.read(new File(imagePath));
