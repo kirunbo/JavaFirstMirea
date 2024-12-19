@@ -138,7 +138,7 @@ class Rectangle extends Shape{
     @Override
     public String toString(){
         return super.toString() + "width equals: " + width
-                + "\nlength equals " + length + "\n";
+                + "\nheight equals " + length + "\n";
     }
 }
 

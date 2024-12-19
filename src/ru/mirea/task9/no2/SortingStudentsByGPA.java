@@ -61,6 +61,7 @@ class Main {
                 new Student("Bob", 3.8),
                 new Student("Charlie", 2.9),
                 new Student("David", 3.7),
+                new Student("David", 3.7),
                 new Student("Eva", 4.0)
         };
 
